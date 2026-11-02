@@ -1,0 +1,9 @@
+rank,id,class,survey,ra,dec,z_l,z_s,mu,f_fiber,sfr,n_cc,n_ia,rmag
+0,ZTF25acfxoib,V,ALeRCE,196.39369,18.32593,,,,,,,,
+1,ZTF20aazpora,V,ALeRCE,231.92481,35.36529,,,,,,,,
+2,ZTF18adjlalc,V,ALeRCE,238.02998,52.89642,,,,,,,,
+3,ZTF24abdooqu,V,ALeRCE,70.96652,-6.30112,,,,,,,,
+4,ZTF21absjikb,V,ALeRCE,40.53030,0.01076,,,,,,,,
+5,ZTF21aafxvah,V,ALeRCE,143.13914,4.89671,,,,,,,,
+6,ZTF20aaxyglx,V,ALeRCE,255.68158,26.43056,,,,,,,,
+7,ZTF19aaseomv,V,ALeRCE,220.03937,19.42671,,,,,,,,

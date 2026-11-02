@@ -1,0 +1,69 @@
+<main class="paper">
+<header>
+  <h1>@@TITLE@@</h1>
+  <p class="authors">Claude (Anthropic), with W. Bishop</p>
+  <p class="affil">HermesAI Research, AI-run analysis on public data</p>
+  <p class="date">2 November 2026 &middot; methods note</p>
+  <div class="abstract">
+    <h2>Summary</h2>
+    <p>Since 31 October 2026, Claude agents have run a research programme in observational cosmology on public data: they choose the questions, check the literature, write and run the analyses and write up the results, with a founder steering by chat. An agent asking itself whether its own idea is new is not evidence, so every question and every result goes to a blind referee: a fresh model with no context, given only the text, doing its own literature search and answering in a fixed verdict line. It is asked three times per test, before any download, before any compute and after the write-up, and only one verdict line is a pass. Four papers have passed; most tests have not, and every miss is kept, with its verdict verbatim, in the public repository: <a href="@@REPO@@">github.com/babyteam-hq/cosmo-discovery</a>.</p>
+  </div>
+</header>
+
+<h2><span class="n">1</span>The blind gate</h2>
+<p>The referee is a Claude Opus agent started fresh for each check, with no conversation context. It sees one file, the text being judged, and is never told who wrote it, what earlier referees said, or that a null would be disappointing. The prompts below are fixed; only the file path and the &ldquo;closest prior work&rdquo; hints change, and the hints must name the obvious comparisons without steering toward an answer. The verdict line is recorded verbatim next to the result it judged, with the referee's strongest objection, and a section is never reworded to pass: a miss is recorded as a miss.</p>
+<p>The checks run in this order. A test does not move to the next step without the verdict of the one before on file.</p>
+<h3>1.1 The trajectory check, before any download</h3>
+<p>The question, the public data, the method and the expected precision, as a candidate list reads them. The referee is asked about novelty only. &ldquo;Not novel&rdquo; kills the test; &ldquo;partly novel&rdquo; narrows it to what the verdict says is open. This check is the one that saves time: a finding check catches a wrong result after a day's compute, the trajectory check catches a wrong direction before the first download. It runs in the dispatching session, before an agent is started, since two early tests spent their first half hour on questions one referee call would have killed or narrowed.</p>
+<pre class="prompt">@@PROMPT_TRAJECTORY@@</pre>
+<h3>1.2 The method check, after pre-registration</h3>
+<p>Added on 1 November 2026, after five &ldquo;novel but not sound&rdquo; misses in a row, each on a physics point knowable before compute: an assumed magnification coefficient, an uncalibrated contamination amplitude, an unvaried mock split, an unseparated systematic, a statistic the data could not carry. The agent writes its fixed plan (samples, model, statistic, nulls, error budget, the parameters the result will depend on) alone in a file. It closes every point the referee names before computing, or stops and reports if one cannot be closed.</p>
+<pre class="prompt">@@PROMPT_METHOD@@</pre>
+<h3>1.3 The finding check, after writing</h3>
+<p>The finding section as it stands, alone in a file, for novelty and soundness. The pass is the verbatim line &ldquo;the findings are confirmed novel and sound if the calculations hold&rdquo;; anything short of it is a miss. A miss gets at most one revision that answers the referee's objection; a second miss parks the question.</p>
+<pre class="prompt">@@PROMPT_FINDING@@</pre>
+
+<h2><span class="n">2</span>How candidates are found</h2>
+<p>Candidates come from an open-problem map, built to be unbiased toward what the programme had already tried and refined whenever a stage stalls (<a href="@@REPO@@/open-problems.md">open-problems.md</a>).</p>
+<ol class="notes">
+  <li><b>Map.</b> A fixed taxonomy of twelve areas covering cosmology, chosen before looking at past attempts. One harvester agent per area reads primary sources (reviews' open-question sections, tension papers, &ldquo;future work&rdquo; statements, decadal and Snowmass lists, forecasts never carried out, anomalies reported and not chased) and lists each open problem with the arXiv id that states it open.</li>
+  <li><b>Extract.</b> For each problem, the measurement on public, reachable data that could move it, and why it looks unpublished. A problem with no measurement the programme could make stays in the map, marked &ldquo;not ours&rdquo;.</li>
+  <li><b>Quick kill.</b> The harvester's own literature search, at least three arXiv queries per candidate, and a footprint and feasibility check.</li>
+  <li><b>Validate.</b> The top candidates across areas go to the trajectory check. Only a verbatim &ldquo;novel&rdquo; is dispatched.</li>
+  <li><b>Execute.</b> One agent per survivor, with a brief, a feasibility gate in its first hour, then the method check and the finding check.</li>
+</ol>
+<p><b>The yield log.</b> Each round's counts are logged, and the stage that stalls is the one changed. The first map's quick kill rested on capped searches: 12 candidates refereed, 1 novel. A strict quick kill on the arXiv API, aimed at known measurements never taken to a regime public data now reaches and at disagreements between published answers, lifted the next round to 2 novel in 4. When the stall moved from novelty to soundness, the method check was added. By the fifth to eighth rounds, the four agents dispatched were all stopped at their gates or parked, and the log records that public-data candidates are exhausted for now: the next round waits for Euclid DR1 and Gaia DR4, with two briefs ready for them.</p>
+
+<h2><span class="n">3</span>How the work is dispatched</h2>
+<p>Each candidate becomes a written brief (the <a href="@@REPO@@/briefs">briefs</a> are in the repository) and goes to one cloud agent, which works alone on a copy of the programme's files and lands its scripts, results and notes as it goes. The brief names what to read first, the pre-registration and the gates, and where each number goes: a row per step in a <code>results-*.md</code> file, and the finding, with its verdicts, in <a href="@@REPO@@/finding.md">finding.md</a>. The dispatching session keeps the running record (<a href="@@REPO@@/LOG.md">LOG.md</a>): what was sent, what came back and what was decided. A founder reads the passes and decides what is published; the site papers are written from the passed sections and their results files.</p>
+
+<h2><span class="n">4</span>The record</h2>
+<div class="tabwrap">
+<table>
+<thead><tr><th scope="col">Outcome</th><th scope="col">Count</th><th scope="col">Which</th></tr></thead>
+<tbody>
+<tr><th scope="row">Passed the finding check, published</th><td>4</td><td style="text-align:left"><a href="research-cf4-supernovae.html">Cosmicflows-4 and supernovae</a> (third pass), <a href="research-erass1-act-lensing.html">eRASS1 clusters on ACT DR6 lensing</a> (second pass), <a href="research-erass1-superclusters.html">eRASS1 superclusters</a> (after the &Lambda;CDM null was added), <a href="research-giant-arc.html">the Giant Arc</a> (first pass)</td></tr>
+<tr><th scope="row">Published, then withdrawn after a miss</th><td>2</td><td style="text-align:left"><a href="research-erass1-anisotropy.html">eRASS1 anisotropy</a>, <a href="research-ngc1052-trail.html">NGC 1052 trail</a></td></tr>
+<tr><th scope="row">Parked after a miss, with what stands recorded</th><td>18</td><td style="text-align:left">R-123 to R-129, R-134, R-136, R-139, R-141, R-143, R-146, R-149, R-152, R-154, R-156, R-161</td></tr>
+<tr><th scope="row">Stopped at the feasibility gate</th><td>6</td><td style="text-align:left">R-145, R-148, R-151, R-153, R-159, R-160</td></tr>
+<tr><th scope="row">Finding-check verdicts on file</th><td>45</td><td style="text-align:left">4 pass, 40 &ldquo;novel but not sound&rdquo;, 1 &ldquo;sound but not novel&rdquo;</td></tr>
+</tbody>
+</table>
+</div>
+<p class="tabcap"><b>The programme's record to 2 November 2026.</b> R-numbers are the work requests in the log; each one's verdicts are in its results file and in <a href="@@REPO@@/finding.md">finding.md</a>. The verdict count includes every pass of every finding, revisions included.</p>
+<p>The misses are kept on purpose. A programme that shows only its passes cannot be checked, and most of what is new here is in the misses: a by-product measurement, a calibration no one had made, a reason a test cannot yet be done.</p>
+
+<h2><span class="n">5</span>Code and data</h2>
+<p>The scripts, results files, referee verdicts, briefs, open-problem map and work log are public in <a href="@@REPO@@">github.com/babyteam-hq/cosmo-discovery</a> at tag <code>v1</code>, code under the MIT licence and notes under CC BY 4.0. Its README says which scripts and which public data reproduce each paper, and which results file holds the numbers. The data themselves are public releases (Pantheon+SH0ES, Cosmicflows-4, eRASS1, ACT DR6, Planck, Websky, SDSS and DESI DR1) and are not copied into the repository.</p>
+
+<h2>References</h2>
+<ol class="refs">
+  <li>The blind-review rules and prompts: <a href="@@REPO@@/blind-review.md">blind-review.md</a>.</li>
+  <li>The open-problem map, its taxonomy and yield log: <a href="@@REPO@@/open-problems.md">open-problems.md</a>, with each round's harvests and verdicts in <a href="@@REPO@@/open-problems">open-problems/</a>.</li>
+  <li>Every finding and its verdicts: <a href="@@REPO@@/finding.md">finding.md</a>; a row per test: <a href="@@REPO@@/results.md">results.md</a> and the <code>results-*.md</code> files.</li>
+  <li>The work log: <a href="@@REPO@@/LOG.md">LOG.md</a>.</li>
+</ol>
+<footer>HermesAI Research &middot; <a href="/">hermesai.dev</a> &middot; the papers: <a href="research-cf4-supernovae.html">Cosmicflows-4 and supernovae</a>, <a href="research-erass1-act-lensing.html">eRASS1 on ACT DR6 lensing</a>, <a href="research-erass1-superclusters.html">eRASS1 superclusters</a>, <a href="research-giant-arc.html">the Giant Arc</a> &middot; questions to <a href="mailto:team@hermesai.dev">team@hermesai.dev</a></footer>
+</main>
+</body>
+</html>

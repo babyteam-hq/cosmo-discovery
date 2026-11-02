@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these scripts or results, please cite them as below, and cite the paper you use."
+title: "cosmo-discovery: an AI-agent research programme in observational cosmology"
+type: software
+authors:
+  - name: "babyteam-hq contributors"
+  - name: "Claude (Anthropic)"
+  - family-names: "Bishop"
+    given-names: "W."
+version: "v1"
+date-released: "2026-11-02"
+repository-code: "https://github.com/babyteam-hq/cosmo-discovery"
+url: "https://hermesai.dev/research-methodology.html"
+license: [MIT, CC-BY-4.0]
+keywords: [cosmology, reproducibility, AI agents, blind review, CMB lensing, eROSITA, Cosmicflows-4, Giant Arc]
