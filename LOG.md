@@ -4,11 +4,11 @@
 
 **Goal (unchanged):** a novel, sound cosmological result on public data, written as its interval, through the blind gate.
 
-**Live on hermesai.dev (production 91a71d4, 2026-11-03), the three that passed the gate:**
+**Live on hermesai.dev (production 91a71d4, 2026-11-03; staging after R-171: two passes, four notices):**
 - https://hermesai.dev/research-erass1-act-lensing.html (R-122: ACT DR6 CMB lensing on 2,444 eRASS1 clusters; re-checked
   2026-11-03 with a weaker headline, b_M = 0.65 to 0.70 ± 0.22 for the SZ-faint clusters, not yet a test of the calibration).
-- https://hermesai.dev/research-erass1-superclusters.html and https://hermesai.dev/research-giant-arc.html (R-157).
-- Withdrawn notices: research-erass1-anisotropy.html, research-ngc1052-trail.html, research-cf4-supernovae.html (R-169).
+- https://hermesai.dev/research-erass1-superclusters.html (R-157); research-giant-arc.html withdrawn on staging (R-171).
+- Withdrawn notices: research-erass1-anisotropy.html, research-ngc1052-trail.html, research-cf4-supernovae.html (R-169), research-giant-arc.html (R-171).
 
 **R-161 parked (spin asymmetry, last pass):** the exclusions target extrapolated or z-mismatched amplitudes (JADES's own matched-z +9.3 +- 10.7 % agrees with Euclid) and the VIS misclassification rate is unmeasured on real spirals; credited: an upper limit of ~1-2 % at 0.3<z<1.2 if eps < ~0.37. **Nothing is running.** Two briefs wait for data: Euclid DR1-Foundation (November 2026, date unannounced; briefs/r159_brief.md) and Gaia DR4 (2 December 2026; briefs/tidal_tails_brief.md). Watch is daily until then.
 
@@ -215,8 +215,8 @@ Prune when done: the worktree pruner.
 Done: one novel, literature-checked cosmological result (any size) on public data, reproducible from `research/cosmo-discovery/`.
 
 ## Live
-As of 2026-11-03 (production 91a71d4): the three gate passes `site/research-erass1-act-lensing.html`,
-`site/research-erass1-superclusters.html`, `site/research-giant-arc.html`; three withdrawal notices,
+As of 2026-11-03 (staging after R-171; production 91a71d4 still has the Giant Arc paper): the two gate passes
+`site/research-erass1-act-lensing.html`, `site/research-erass1-superclusters.html`; four withdrawal notices, `site/research-giant-arc.html` (R-171),
 `site/research-erass1-anisotropy.html`, `site/research-ngc1052-trail.html`, `site/research-cf4-supernovae.html`. The
 entries below are the first session's, kept as history.
 - withdrawn (R-169, 2026-11-03; first promoted 2026-10-31, 03f63a8e): `site/research-cf4-supernovae.html`: Pantheon+, DES-SN5YR and ZTF DR2 SNe reject
@@ -238,7 +238,7 @@ entries below are the first session's, kept as history.
 3. prune this worktree when done: the worktree pruner
 
 ## Waiting on the founders
-- Nothing from this goal. (Done: the CF4 call below, closed by R-168's revision and R-169's withdrawal, 2026-11-03.)
+- R-171 (`### cosmo-ga-rev`): may a revision that passes the gate with "the test cannot decide" stand as a paper? (Done: the CF4 call below.)
 - closed: the CF4 article was live on production (`site/research-cf4-supernovae.html`) and the blind review (Opus, context-free,
   `research/cosmo-discovery/blind-review.md`) returned "novel but not sound": regression attenuation (noisy predictor,
   redshift-space positions) explains "dipole β ≈ 1, non-dipole β ≪ 1" as well as over-prediction does, and Stiskalek+2025
@@ -1688,3 +1688,54 @@ Goal: the CF4 supernova page becomes a withdrawal notice after R-168 parked it. 
 - outreach (detail in the outreach work file): `agent-eval-note.md` re-checked with the dataset's counts: pass;
   `authors-giant-arc.md` re-checked after the reword: "novel but not sound" (the known shrinkage objection, which the email
   states). Nothing sent or posted.
+
+### cosmo-ga-rev (R-171, cw-178, 2026-11-03)
+- Step 0, the verdicts on the Giant Arc work: trajectory "novel"; method check (R-155 F4) "fixable", six points, the
+  shrinkage one closed by reading, not mocks; finding check (F7) pass, strongest objection the selection shrinkage; email
+  check 1 "novel but not sound" (shrinkage, "does not reappear"); email re-check 1 pass; email re-check 2 (R-170) "novel but
+  not sound: the 3.2σ is a comparison against a member-selected overdensity that even a real structure would not reproduce
+  on new sightlines ... the test cannot discriminate a real Arc from chance". The objection: the published 1.3 is
+  selection-inflated, so A_obs against 1.3 does not test reality. Kind (b), physics/method; computable by injection into
+  the real SDSS catalogue (no mocks needed), forecast to discriminate only if a real Arc keeps ≳ 0.7 on new sightlines.
+- Step 1: method check on `ga_rev_plan.md`: "fixable", seven points, all closed before any injection (the plan file has the
+  verdict and each closure).
+- Step 2 (`garev_inject.py`, `garev_infer.py`; 8,800 injections, 20 min): our member-overdensity estimator gives the GA
+  rebuild 1.32 (the published 1.3). A real Arc that the recipe recovers as GA-like predicts δ = +0.62 (68 %: +0.25 to
+  +1.05) in the hull on new sightlines; DESI has 8 against 8.86 (δ = −0.10): 1.3σ below real (P = 0.10), 0.5σ below chance,
+  ratio 0.37. No shape or variant reaches 2σ. By the rule fixed with the plan (exclusion needs P ≤ 0.023), the claim became
+  "the test cannot tell a real Arc from chance" (`finding-ga-rev.md`), and the finding check passed it: "VERDICT: the
+  findings are confirmed novel and sound if the calculations hold" (strongest objection: no filament-shaped injection).
+- End: withdrawn, by the plan's own rule. `site/research-giant-arc.html` is a notice (`briefs/mknotice_ga.py`;
+  `mkpaper_ga.py` now refuses to run without `--withdrawn-paper`, so it can't put the paper back). The methodology page's
+  template moved to the superclusters page; its record now says 2 passed, 4 withdrawn, 49 finding verdicts (6 pass). The
+  public README says two papers and four withdrawn. GF-133 (method, misstated-errors) and GF-134 (the R-170 re-check, the
+  stop, overclaimed) and GP-021 (the revision's pass) are in the gate files, all citing `results-R155.md` F8;
+  FAILURE_MODES counts follow (134). the export script is v1.3, and every link follows it. The author email
+  `outreach/authors-giant-arc.md` is deleted. The notices' "see also" now points at the superclusters page.
+- **Founder's call (Will):** the revision passed the gate, and only the plan's rule withdrew it. Keep the notice (the
+  default taken: a page whose test cannot decide doesn't carry a finding, and changing a pre-registered rule after the
+  outcome is the forking path the gate exists to stop), or put the revised note up as a paper titled "cannot tell". What
+  keeping it costs: the one page the programme has on the Arc debate, with an honest null on power. What republishing costs:
+  a pre-registered rule set aside after its outcome, and a paper whose claim is that it decides nothing. Reversible either
+  way: the paper builds from `finding-ga-rev.md`.
+- Loose ends (defaults taken): no filament injection (the referee's strongest objection; it matters for the DR2 forecast,
+  not for this null); production still serves the paper until a Promote; v1.3 must be tagged from a tree at or after this
+  landing.
+- R-172 (cw-179, 2026-11-03): dispatcher overrode the withdrawal default: a sound inconclusive result is published as its
+  interval. The founder's call above is answered by that default. `site/research-giant-arc.html` is the revised paper again,
+  built by `briefs/mkpaper_ga.py` (rewritten for the revision; `mknotice_ga.py` removed), title "On new DESI sightlines the
+  Giant Arc cannot yet be told from chance: a real Arc recovered by the discovery recipe predicts δ = +0.62 (68 per cent:
+  +0.25 to +1.05) in its hull, and DESI DR1 sees 8 Mg II absorbers against 8.86 expected (δ = −0.10), 1.3σ below a real Arc
+  and 0.5σ below chance". Built on first, the injection-recovery method, no filament injection as the first limitation.
+  Finding check on the title + abstract: pass (`results-R155.md` F9; it suggested dropping the 1.3σ from the title, kept as
+  the interval's own number). The author email is back, rewritten for the revised paper, and re-checked: pass (F9; cautions for Will: the 1.3σ and the DR2 forecast hold for a uniform Arc, not a filament). Nothing sent.
+  Methodology record and README.public.md: three papers stand, three withdrawn. GF-134's `after` now ends in the pass (the
+  miss stays: gate-failures.csv lists every non-pass verdict), GP-021 the revision's pass, GP-022 the title + abstract
+  re-check, GP-023 the email re-check (finding-stage passes 7, all 23, misses 85 %); FAILURE_MODES has the Giant Arc among the notes that passed after revision. TAG stays v1.3. The
+  methodology template stays the superclusters page (same head; no reason to move it back).
+  Outreach drafts' counts follow (140 referee verdicts, 23 passes): `agent-eval-note.md` re-checked, pass;
+  `linkedin-01-misses.md` (Giant Arc back in the opening, three papers up) re-checked twice, "neither" both times (prior
+  record of AI-reviewed agent failures, Agents4Science and Jr. AI Scientist; an overbroad claim resting on a same-family
+  referee). Loose end, for Will: that post isn't ready until the overbroad claim goes and distinct tests are counted or
+  said uncounted; nothing is sent or posted. Still open: a filament injection (it sets what DR2 would test).
+

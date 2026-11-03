@@ -143,3 +143,76 @@ VERDICT: the findings are confirmed novel and sound if the calculations hold
 Strongest objection (referee): the published 1.3 is selection-inflated, so the test falsifies the published amplitude but
 cannot separate a modest real structure (A ≲ 0.6) from a chance pattern without the selection shrinkage from clustered mocks.
 **Pass on the first finding check.** No revision made.
+
+## F8. Re-check, one revision, withdrawn (R-171, cosmo-ga-rev, 2026-11-03)
+
+**The re-check.** R-170 (2026-11-03) re-ran the finding check on the author email after the page's title was reworded:
+VERDICT: novel but not sound: the 3.2σ is a comparison against a member-selected overdensity that even a real structure would not reproduce on new sightlines, and without mock calibration of that shrinkage (and with Poisson-only errors on ~9 expected absorbers) the test cannot discriminate a real Arc from chance, so the title's implied tension is unsupported.
+
+The objection, in one line: the published 1.3 is measured on the members the algorithm picked, so A_obs against 1.3 is not
+a test of whether the Arc is real; what a real Arc predicts on new sightlines is unmeasured. It is the first finding check's
+strongest objection (F7), and physics/method, not presentation: no rewording makes the comparison answer the question.
+Computable on public data: inject real overdensities into the real SDSS catalogue, re-run the recipe, keep the GA-like
+recoveries, and read off what DESI would see. Forecast before computing: the test's σ(δ) ≈ 0.34 at 8.86 expected, so it
+discriminates only if the shrinkage leaves a real Arc's excess ≳ 0.7.
+
+**Method check on the revision's plan** (blind-review.md 1b; fresh context-free Opus, `ga_rev_plan.md` alone), verbatim:
+METHOD: fixable: replace the fixed A=0 error convolution with count-level Poisson(E_DESI(1+A_pred)) plus clustering scatter per injection; calibrate the chance baseline conditional on GA-like recovery under each hypothesis (or report results with and without it) and check it on A_true=0 GA-like groups; match DESI to the Z&M equivalent-width/completeness selection or measure/vary the DESI/SDSS relative bias; fix minimum GA-like recovery counts and independent-site counts with bootstrap errors on L and p and check L(3)≈0; add an SDSS completeness-weighted injection variant; restrict the exclusion claim to profile H unless S (and a larger diffuse profile) also exclude; exclude known neighbouring groups from injection sites and track merges
+
+All seven closed before any injection ran; how each was closed is in `ga_rev_plan.md`.
+
+**The computation** (`garev_inject.py`, `garev_infer.py`; logs `logs/garev_run.log`, `logs/garev_infer.log`; 8,800
+injections in 20 min on 3 cores). The member-overdensity estimator gives the GA rebuild 1.32 (48 in its CHMS against 20.7
+SDSS-expected), the published 1.3. 200 sites (633 tried), 14 independent patches.
+
+| injected shape | GA-like recoveries | A_true (16/50/84) | predicted δ in hull (16/50/84) | P(N ≤ 8 \| real) | P(N ≤ 8 \| chance) | ratio real/chance |
+|---|---|---|---|---|---|---|
+| **H, uniform in the CHMS (primary)** | 280 | 0.5 / 1.3 / 2.0 | +0.25 / +0.62 / +1.05 | **0.104 (1.26σ)**, block bootstrap 0.091-0.114 | 0.32 | 0.37 |
+| S, member spheres | 170 | 1.6 / 3.0 / 4.0 | +0.15 / +0.26 / +0.42 | 0.22 (0.77σ) | 0.24 | 0.91 |
+| L, 60.8 Mpc hull | 200 | 0.5 / 1.0 / 1.3 | +0.22 / +0.56 / +1.05 | 0.12 (1.19σ) | 0.32 | 0.42 |
+| H, g-magnitude completeness | 244 | 0.5 / 1.0 / 1.6 | +0.19 / +0.48 / +0.86 | 0.13 (1.11σ) | 0.33 | 0.46 |
+
+Primary-shape variants: window ±0.5, 0.11; prior 1/A, 0.15; W > 0.6, 0.13; r = δ_DESI/δ_SDSS 0.25-1.25, 0.28-0.08. Chance
+part bg: +0.04 (real), +0.15 (chance); the slice's own GA-like groups +0.20. f_rec median 0.54 (H). L(4.0) = 0 for H and L.
+
+**Decision, by the rule fixed with the plan:** P = 0.10 > 0.023, so the claim becomes "this test cannot distinguish a real
+Giant Arc from chance", and the finding is withdrawn. Section: `finding-ga-rev.md`.
+
+**Finding check on the revised section** (fresh context-free Opus, `finding-ga-rev.md` alone), verbatim:
+VERDICT: the findings are confirmed novel and sound if the calculations hold
+
+Strongest objection (referee): the real-Arc prediction rests on uniform or sphere-clumped injections, not the thin filament
+the discoverers describe, so "cannot tell" is shown for those shapes; the DR2 forecast inherits that and should be redone
+with a filament injection. Closest work: Sawala & Teeriaho 2025 (arXiv:2505.11072), which the note should cite.
+
+The revised note passes, but its claim is that the test cannot decide; by the rule fixed before computing, the page is a
+withdrawal notice (`site/research-giant-arc.html`), not a paper. Whether a "cannot decide" note may stand as a paper is a
+founder's call, recorded in the work log; the notice is reversible.
+
+## F9. Published as its interval (R-172, 2026-11-03)
+
+The dispatcher overrode R-171's withdrawal default: the plan's rule governs what is claimed (no exclusion of the Arc), not
+whether a sound result is published, so the revision that passed (F8) is the paper at `site/research-giant-arc.html`
+(`briefs/mkpaper_ga.py`, `briefs/paper_ga_body.html`), its title and abstract the interval.
+
+**Finding check on the revised title + abstract** (fresh context-free Opus, title and abstract alone in a file), verbatim:
+VERDICT: the findings are confirmed novel and sound if the calculations hold
+
+Strongest objection (referee): no filament-shaped injection; a thin filament's hull is mostly empty, so its prediction
+would be diluted below +0.62, which moves the 1.3σ and the DR2 forecast but strengthens "cannot yet tell". Cautions: the
+test is weak (even a perfect count at ~9 expected separates +0.62 from +0.15 by ~1.4σ); the DR2 forecast assumes the count
+holds and no systematic in the expected count; the DESI/SDSS bias range is assumed, not measured; a varied hull definition
+is missing. It suggested dropping the 1.3σ from the title; kept, since the title leads with "cannot yet be told" and the
+1.3σ is the interval's own number. Closest work: 2201.06875, 2402.07591, 2604.17534, 2502.03515, 2505.11072, 2504.14940,
+1211.6256, astro-ph/0111135, 1311.0900, 1104.0949.
+
+**Finding check on the author email** (`outreach/authors-giant-arc.md`, rewritten for the revised paper; fresh context-free
+Opus, the email alone), verbatim:
+VERDICT: the findings are confirmed novel and sound if the calculations hold
+
+Strongest objection (referee): only a uniform-in-hull Arc was injected; for a thin filament a real Arc's prediction falls
+toward zero, so neither the 1.3σ nor the DR2 forecast applies to it, while "cannot yet tell" survives as a statement of
+low power. Cautions: the prediction's sensitivity to the injected amplitudes and profiles; the DESI-only sightlines'
+detection function; the 0.5σ against chance includes clustering scatter beyond Poisson. Closest work: 2201.06875,
+2402.07591, 2604.17534, 2502.03515, 2505.11072, 2504.14940, 1306.1700, 2305.20016, 2412.15383. Email not changed after it;
+nothing sent.

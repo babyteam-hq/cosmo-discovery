@@ -16,7 +16,7 @@ published and then withdrawn (after the table).
 |---|---|---|---|
 | [ACT DR6 CMB lensing detects eRASS1 clusters at 5σ; their mass rescaling does not yet test the eROSITA weak-lensing calibration](https://hermesai.dev/research-erass1-act-lensing.html) | 1 Nov 2026 | `erass1_act.py` (imports `erass1_cmblens.py`), `act_dr6_fetch.sh`, `act_dr6_simstream.sh` | [`results-R122.md`](results-R122.md) |
 | [ACT DR6 CMB lensing over 365 eRASS1 superclusters, against the ΛCDM expectation from the Websky light-cone](https://hermesai.dev/research-erass1-superclusters.html) | 2 Nov 2026 | `sc_members.py`, `sc_lens.py`, `sc_null.py` (with `erass1_cmblens.py`, `erass1_act.py`, `act_dr6_fetch.sh`, `act_dr6_simstream.sh`) | [`results-R137.md`](results-R137.md), [`results-R140.md`](results-R140.md) |
-| [The Giant Arc is not seen at its published strength on independent sightlines](https://hermesai.dev/research-giant-arc.html) | 2 Nov 2026 | `r155_template.py`, `r155_sightlines.py`, `r155_core.py`, `r155_run.py`, `r155_measure.py`, `r155_common.py`; the plan the method check saw, [`r155_plan.md`](r155_plan.md) | [`results-R155.md`](results-R155.md) |
+| [On new DESI sightlines the Giant Arc cannot yet be told from chance: a real Arc recovered by the discovery recipe predicts δ = +0.62 (68 per cent: +0.25 to +1.05) in its hull, and DESI DR1 sees 8 against 8.86 expected, 1.3σ below a real Arc and 0.5σ below chance](https://hermesai.dev/research-giant-arc.html) | 2 Nov 2026, revised 3 Nov 2026 | first version: `r155_template.py`, `r155_sightlines.py`, `r155_core.py`, `r155_run.py`, `r155_measure.py`, `r155_common.py`, [`r155_plan.md`](r155_plan.md); the revision, after a re-check found the first version compared against a selection-inflated amplitude: `garev_inject.py`, `garev_infer.py`, [`ga_rev_plan.md`](ga_rev_plan.md), [`finding-ga-rev.md`](finding-ga-rev.md) | [`results-R155.md`](results-R155.md) |
 
 Withdrawn after publication, when the blind referee found them not sound or not novel:
 [the eRASS1 cluster anisotropy note](https://hermesai.dev/research-erass1-anisotropy.html) (`erass1_lxt.py`),
@@ -28,8 +28,8 @@ calibrated null, found the reference field 2M++ failing it too (first version: `
 `cf4_variants.py`, `cf4_2023.py`, `cf4_robust.py`, `cf4_notin.py`, `cf4_des.py`, `ztf_tests.py`, `bulk_flow.py`,
 `cf4_mocks.py`, `cf4_referee2.py`, with `cf4_io.py`; [`results.md`](results.md); the revision: `cf4rev_common.py`,
 `cf4rev_chain.py`, `cf4rev_fit.py`, `cf4rev_realwf.py`, `cf4rev_table.py`, [`plan-cf4-rev.md`](plan-cf4-rev.md),
-[`results-cf4-rev.md`](results-cf4-rev.md), [`finding-cf4-rev.md`](finding-cf4-rev.md)). Their sections and verdicts
-are still in [`finding.md`](finding.md).
+[`results-cf4-rev.md`](results-cf4-rev.md), [`finding-cf4-rev.md`](finding-cf4-rev.md)).
+Their sections and verdicts are still in [`finding.md`](finding.md).
 
 ## How the work is done
 

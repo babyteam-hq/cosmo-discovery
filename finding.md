@@ -3861,7 +3861,7 @@ Strongest objection: the published 1.3 was measured on the members the algorithm
 back weaker on new sightlines. The test therefore falsifies the published amplitude, but cannot tell a modest real structure
 (A ≲ 0.6) from a chance pattern without modelling the selection shrinkage on clustered mocks. Closest work found: none re-counts
 absorbers on independent sightlines (2201.06875, 2402.07591, 2604.17534, 2504.14940, 2502.03515, 2505.11072; related only:
-2604.13162). Section unchanged since review.
+2604.13162). Section unchanged since review. Withdrawn 2026-11-03 (R-171): the R-170 re-check found the comparison with the member-selected 1.3 not sound; the one revision measured the selection shrinkage by injection and found the test cannot tell a real Arc from chance (1.3σ); its section, which passed, is `finding-ga-rev.md`, and its record `results-R155.md` F8.
 
 ---
 

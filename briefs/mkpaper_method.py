@@ -1,6 +1,7 @@
 """Builds site/research-methodology.html (R-162): how the cosmology papers are made, with the referee prompts verbatim.
 
-The head and styles are the Giant Arc paper's (site/research-giant-arc.html); the body is paper_method_body.html; the three
+The head and styles are the superclusters paper's (site/research-erass1-superclusters.html; the Giant Arc paper's until it
+was withdrawn, R-171); the body is paper_method_body.html; the three
 prompts are read from blind-review.md here, so the page never drifts from the rules. Links to the public repository point at
 the tag v1. Run from the repo root: python research/cosmo-discovery/briefs/mkpaper_method.py
 """
@@ -11,7 +12,7 @@ _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
 import built_on  # the opening "Built on" section (built_on.json)
 
 SITE = 'site/research-methodology.html'
-LAST = 'site/research-giant-arc.html'
+LAST = 'site/research-erass1-superclusters.html'
 REPO = 'https://github.com/babyteam-hq/cosmo-discovery/tree/v1'
 T = 'How the HermesAI cosmology papers are made: the blind gate, the open-problem map and the record of passes and misses'
 DESC = ('Methods behind the HermesAI cosmology papers: AI agents choose, run and write up tests on public data, and a '
@@ -34,7 +35,7 @@ old_title = re.search(r'<title>([^<]*)</title>', head).group(1)
 head = head.replace(old_title, T)
 head = re.sub(r'<meta name="description" content="[^"]*">', lambda m: f'<meta name="description" content="{DESC}">', head)
 head = re.sub(r'<meta property="og:description" content="[^"]*">', lambda m: f'<meta property="og:description" content="{DESC}">', head)
-head = head.replace('research-giant-arc.html', 'research-methodology.html')
+head = head.replace('research-erass1-superclusters.html', 'research-methodology.html')
 head = head.replace('</style>', 'pre.prompt{font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;line-height:1.5;'
                     'white-space:pre-wrap;background:var(--surface);border-top:1px solid var(--line);'
                     'border-bottom:1px solid var(--line);padding:12px;margin:12px 0 20px}\n</style>')
