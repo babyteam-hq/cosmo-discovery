@@ -1,0 +1,236 @@
+{
+ "cf4-supernovae": {
+  "credits": [
+   {
+    "who": "the Pantheon+ team",
+    "what": "released the 618 nearby supernovae, their distances and full error matrix that are the main test sample",
+    "cite": "Scolnic D. et al. 2022, ApJ 938, 113; Brout D. et al. 2022, ApJ 938, 110",
+    "arxiv": "2112.03863"
+   },
+   {
+    "who": "the DES Collaboration",
+    "what": "released the DES-SN5YR supernova distances and covariance, used as an independent pipeline check",
+    "cite": "DES Collaboration 2024, ApJL 973, L14",
+    "arxiv": "2401.02929"
+   },
+   {
+    "who": "the ZTF SN Ia team (Rigault et al.)",
+    "what": "released ZTF DR2, 1,122 supernovae Cosmicflows-4 never used: the independent sample",
+    "cite": "Rigault M. et al. 2025, A&A, ZTF SN Ia DR2: Overview",
+    "arxiv": "2409.04346"
+   },
+   {
+    "who": "Tully et al. (Cosmicflows-4)",
+    "what": "built the Cosmicflows-4 catalogue of about 56,000 galaxy distances that the velocity fields come from",
+    "cite": "Tully R. B. et al. 2023, ApJ 944, 94",
+    "arxiv": "2209.11238"
+   },
+   {
+    "who": "Courtois, Dupuy, Guinet, Baulieu, Ruppin & Brenas",
+    "what": "reconstructed and released the 2023 Cosmicflows-4 velocity fields tested here",
+    "cite": "Courtois H. M. et al. 2023, A&A 670, L15",
+    "arxiv": "2211.16390"
+   },
+   {
+    "who": "Courtois, Mould, Hollinger, Dupuy & Zhang",
+    "what": "released the 2025 CF4++ velocity field, the main field tested here",
+    "cite": "Courtois H. M. et al. 2025, A&A 701, A187",
+    "arxiv": "2502.01308"
+   },
+   {
+    "who": "Carrick, Turnbull, Lavaux & Hudson",
+    "what": "built the 2M++ velocity field, the reference every Cosmicflows-4 result is compared with",
+    "cite": "Carrick J., Turnbull S. J., Lavaux G., Hudson M. J. 2015, MNRAS 450, 317",
+    "arxiv": "1504.04627"
+   }
+  ]
+ },
+ "erass1-act-lensing": {
+  "credits": [
+   {
+    "who": "Bulbul et al. and the eROSITA-DE Consortium",
+    "what": "built the eRASS1 cluster catalogue: the clusters, redshifts and masses we stacked the lensing map on",
+    "cite": "Bulbul E. et al. 2024, A&A 685, A106, arXiv:2402.08452",
+    "arxiv": "2402.08452"
+   },
+   {
+    "who": "the ACT Collaboration (Madhavacheril, Qu et al.)",
+    "what": "made, validated and released the ACT DR6 CMB-lensing map, its variants, masks and simulated reconstructions that we measured on",
+    "cite": "Madhavacheril M. S. et al. 2024, ApJ 962, 113, arXiv:2304.05203; Qu F. J. et al. 2024, ApJ 962, 112, arXiv:2304.05202",
+    "arxiv": "2304.05203"
+   },
+   {
+    "who": "Grandis et al.",
+    "what": "calibrated the eRASS1 cluster masses with DES Year 3 galaxy weak lensing, the mass scale we tested",
+    "cite": "Grandis S. et al. 2024, A&A 687, A178, arXiv:2402.08455",
+    "arxiv": "2402.08455"
+   },
+   {
+    "who": "Kleinebreil et al.",
+    "what": "calibrated the same masses with KiDS-1000 and HSC weak lensing",
+    "cite": "Kleinebreil F. et al. 2025, A&A 695, A216, arXiv:2402.08456",
+    "arxiv": "2402.08456"
+   },
+   {
+    "who": "Ghirardini et al.",
+    "what": "defined the eRASS1 cosmology sample and derived the cosmology its cluster masses imply",
+    "cite": "Ghirardini V. et al. 2024, A&A 689, A298, arXiv:2402.08458",
+    "arxiv": "2402.08458"
+   }
+  ]
+ },
+ "erass1-superclusters": {
+  "credits": [
+   {
+    "who": "Liu et al. and the eROSITA-DE Consortium",
+    "what": "built the eRASS1 supercluster catalogue and the grouping recipe we re-ran to rebuild each supercluster's members",
+    "cite": "Liu A. et al. 2024, arXiv:2402.08454",
+    "arxiv": "2402.08454"
+   },
+   {
+    "who": "Bulbul et al. and the eROSITA-DE Consortium",
+    "what": "built the eRASS1 cluster catalogue: the clusters, redshifts and masses behind the members and the comparison clusters",
+    "cite": "Bulbul E. et al. 2024, A&A 685, A106, arXiv:2402.08452",
+    "arxiv": "2402.08452"
+   },
+   {
+    "who": "the ACT Collaboration (Madhavacheril, Qu et al.)",
+    "what": "made, validated and released the ACT DR6 CMB-lensing map, its variants, masks and simulated reconstructions that we measured on",
+    "cite": "Madhavacheril M. S. et al. 2024, ApJ 962, 113, arXiv:2304.05203; Qu F. J. et al. 2024, ApJ 962, 112, arXiv:2304.05202",
+    "arxiv": "2304.05203"
+   },
+   {
+    "who": "Stein, Alvarez, Bond, van Engelen & Battaglia",
+    "what": "made the Websky simulated universe we ran the whole analysis on to get the standard-model expectation",
+    "cite": "Stein G., Alvarez M. A., Bond J. R., van Engelen A., Battaglia N. 2020, JCAP 10, 012, arXiv:2001.08787",
+    "arxiv": "2001.08787"
+   },
+   {
+    "who": "Liu et al.",
+    "what": "compared supercluster members with isolated clusters in weak lensing, the comparison our control follows",
+    "cite": "Liu A. et al. 2024, arXiv:2404.17345",
+    "arxiv": "2404.17345"
+   }
+  ]
+ },
+ "giant-arc": {
+  "credits": [
+   {
+    "who": "the DESI Collaboration",
+    "what": "released DR1: the Mg II absorber catalogue and quasar spectra on the new sightlines we counted",
+    "cite": "DESI Collaboration (Abdul Karim M., et al.) 2025, arXiv:2503.14745",
+    "arxiv": "2503.14745"
+   },
+   {
+    "who": "Zhu & Ménard",
+    "what": "built the JHU-SDSS Mg II absorber catalogues the Giant Arc was found in and that we rebuilt it from",
+    "cite": "Zhu G., Ménard B. 2013, arXiv:1211.6215",
+    "arxiv": "1211.6215"
+   },
+   {
+    "who": "Lyke et al. (SDSS)",
+    "what": "compiled the SDSS DR16Q quasar catalogue, which let us drop every sightline SDSS had already observed",
+    "cite": "Lyke B. W., et al. 2020, ApJS 250, 8, arXiv:2007.09001",
+    "arxiv": "2007.09001"
+   },
+   {
+    "who": "Napolitano et al.",
+    "what": "developed the method that finds Mg II absorbers in DESI quasar spectra",
+    "cite": "Napolitano L., et al. 2023, AJ 166, 99, arXiv:2305.20016",
+    "arxiv": "2305.20016"
+   },
+   {
+    "who": "Lopez, Clowes & Williger",
+    "what": "discovered the Giant Arc and published the method we re-ran (single-linkage clustering of Mg II absorbers)",
+    "cite": "Lopez A. M., Clowes R. G., Williger G. M. 2022, arXiv:2201.06875",
+    "arxiv": "2201.06875"
+   }
+  ]
+ },
+ "erass1-anisotropy": {
+  "lead": "The withdrawn note re-tested other people's work, on data and methods built by human researchers:",
+  "credits": [
+   {
+    "who": "the eROSITA-DE consortium (Bulbul et al.)",
+    "what": "surveyed the sky with eROSITA and released the eRASS1 cluster catalogue the re-test used",
+    "cite": "Bulbul E. et al. 2024, A&A, The SRG/eROSITA All-Sky Survey: the first catalog of galaxy clusters and groups",
+    "arxiv": "2402.08452"
+   },
+   {
+    "who": "Migkas, Schellenberger, Reiprich, Pacaud, Ramos-Ceja & Lovisari",
+    "what": "found the cluster X-ray brightness anisotropy and devised the test we re-ran on eRASS1",
+    "cite": "Migkas K. et al. 2020, A&A 636, A15",
+    "arxiv": "2004.03305"
+   },
+   {
+    "who": "Migkas et al.",
+    "what": "extended the anisotropy test to ten cluster scaling relations and checked survey exposure and bias",
+    "cite": "Migkas K. et al. 2021, A&A 649, A151",
+    "arxiv": "2103.13904"
+   }
+  ]
+ },
+ "ngc1052-trail": {
+  "lead": "The withdrawn note re-examined other people's discovery, on data and methods built by human researchers:",
+  "credits": [
+   {
+    "who": "Román, Castilla & Pascual-Granado",
+    "what": "catalogued the faint, diffuse galaxies around NGC 1052 in which the trail was found",
+    "cite": "Román J., Castilla A., Pascual-Granado J. 2021, A&A, arXiv:2110.09527",
+    "arxiv": "2110.09527"
+   },
+   {
+    "who": "van Dokkum et al.",
+    "what": "discovered the trail of dark-matter-free dwarfs and tested its alignment against chance across every possible line",
+    "cite": "van Dokkum P., et al. 2022, Nature 605, 435, arXiv:2205.08552",
+    "arxiv": "2205.08552"
+   },
+   {
+    "who": "Keim et al.",
+    "what": "measured the trail galaxies' velocities and showed the velocity trend survives a test for how they were chosen",
+    "cite": "Keim M. A., et al. 2025, arXiv:2506.10220",
+    "arxiv": "2506.10220"
+   },
+   {
+    "who": "Keim et al.",
+    "what": "found a third galaxy missing dark matter on the trail and compared the dark matter of all three",
+    "cite": "Keim M. A., et al. 2026, arXiv:2603.15860",
+    "arxiv": "2603.15860"
+   }
+  ]
+ },
+ "methodology": {
+  "lead": "Every paper this method produced stands on public data and methods built by human teams (each paper's own Built-on section names them in full):",
+  "credits": [
+   {
+    "who": "Tully et al. and the Cosmicflows team; the Pantheon+, DES and ZTF supernova teams",
+    "what": "the galaxy distances, velocity fields and supernova samples behind the Cosmicflows-4 paper",
+    "cite": "Tully R. B. et al. 2023, ApJ 944, 94; Scolnic D. et al. 2022, ApJ 938, 113",
+    "arxiv": "2209.11238"
+   },
+   {
+    "who": "the eROSITA-DE Consortium (Bulbul, Liu et al.)",
+    "what": "the eRASS1 cluster and supercluster catalogues behind the two eRASS1 papers",
+    "cite": "Bulbul E. et al. 2024, A&A 685, A106, arXiv:2402.08452; Liu A. et al. 2024, arXiv:2402.08454",
+    "arxiv": "2402.08452"
+   },
+   {
+    "who": "the ACT Collaboration (Madhavacheril, Qu et al.)",
+    "what": "made, validated and released the ACT DR6 CMB-lensing map, its variants, masks and simulated reconstructions that we measured on",
+    "cite": "Madhavacheril M. S. et al. 2024, ApJ 962, 113, arXiv:2304.05203; Qu F. J. et al. 2024, ApJ 962, 112, arXiv:2304.05202",
+    "arxiv": "2304.05203"
+   },
+   {
+    "who": "the DESI Collaboration, Zhu & Ménard, and Lopez, Clowes & Williger",
+    "what": "the DESI DR1 spectra and absorbers, the SDSS Mg II catalogues, and the Giant Arc discovery and method behind the Giant Arc paper",
+    "cite": "DESI Collaboration 2025, arXiv:2503.14745; Zhu G., Ménard B. 2013, arXiv:1211.6215; Lopez A. M. et al. 2022, arXiv:2201.06875",
+    "arxiv": "2503.14745"
+   },
+   {
+    "who": "Klein & Roodman",
+    "what": "set out blind analysis, fixing a measurement before seeing its result, which our pre-registration and method check borrow from physics",
+    "cite": "Klein J. R., Roodman A. 2005, Annu. Rev. Nucl. Part. Sci. 55, 141"
+   }
+  ]
+ }
+}

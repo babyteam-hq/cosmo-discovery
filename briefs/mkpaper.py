@@ -1,4 +1,7 @@
 import re, sys
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import built_on  # the opening "Built on" section (built_on.json)
 src=open('site/research-cf4-supernovae.html',encoding='utf-8').read()
 head=src[:src.index('<main class="paper">')]
 T="ACT DR6 CMB lensing measures the eRASS1 cluster mass scale at 25 to 30 per cent: the pre-registered samples give b<sub>M</sub> = 0.65 to 0.70 &plusmn; 0.19 &plusmn; 0.12, excluding neither the eROSITA weak-lensing calibration nor a halving of it"
@@ -10,7 +13,7 @@ head=re.sub(r'<meta property="og:description" content="[^"]*">',f'<meta property
 head=head.replace("research-cf4-supernovae.html","research-erass1-act-lensing.html")
 # The paper's body HTML, the one argument (its first build's copy is gone; the page has since been edited in place).
 body=open(sys.argv[1],encoding='utf-8').read().replace('@@TITLE@@',T)
-open('site/research-erass1-act-lensing.html','w',encoding='utf-8').write(head+body)
+open('site/research-erass1-act-lensing.html','w',encoding='utf-8').write(built_on.insert(head+body, 'erass1-act-lensing'))
 s=open('site/sitemap.xml',encoding='utf-8').read()
 if 'research-erass1-act-lensing' not in s:
     s=s.replace('  <url><loc>https://hermesai.dev/research-cf4-supernovae.html</loc></url>\n','  <url><loc>https://hermesai.dev/research-cf4-supernovae.html</loc></url>\n  <url><loc>https://hermesai.dev/research-erass1-act-lensing.html</loc></url>\n')

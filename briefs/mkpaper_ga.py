@@ -4,6 +4,9 @@ The head and styles are the last paper's (site/research-erass1-superclusters.htm
 is a static SVG drawn here from the landed numbers. Run from the repo root: python research/cosmo-discovery/briefs/mkpaper_ga.py
 """
 import re
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import built_on  # the opening "Built on" section (built_on.json)
 
 SITE = 'site/research-giant-arc.html'
 LAST = 'site/research-erass1-superclusters.html'
@@ -92,7 +95,7 @@ head = re.sub(r'<meta property="og:description" content="[^"]*">',
 head = head.replace('research-erass1-superclusters.html', 'research-giant-arc.html')
 body = open('research/cosmo-discovery/briefs/paper_ga_body.html', encoding='utf-8').read()
 body = body.replace('@@TITLE@@', T).replace('@@FIGURE@@', figure()).replace('@@TABLE@@', table())
-open(SITE, 'w', encoding='utf-8', newline='\n').write(head + body)
+open(SITE, 'w', encoding='utf-8', newline='\n').write(built_on.insert(head + body, 'giant-arc'))
 s = open('site/sitemap.xml', encoding='utf-8').read()
 if 'research-giant-arc' not in s:
     a = '  <url><loc>https://hermesai.dev/research-erass1-superclusters.html</loc></url>\n'

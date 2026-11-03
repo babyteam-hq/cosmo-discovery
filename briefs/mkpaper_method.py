@@ -6,6 +6,9 @@ the tag v1. Run from the repo root: python research/cosmo-discovery/briefs/mkpap
 """
 import html
 import re
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import built_on  # the opening "Built on" section (built_on.json)
 
 SITE = 'site/research-methodology.html'
 LAST = 'site/research-giant-arc.html'
@@ -40,7 +43,7 @@ body = body.replace('@@TITLE@@', T).replace('@@REPO@@', REPO)
 for key, name in PROMPTS.items():
     body = body.replace(f'@@{key}@@', html.escape(prompt(rules, name), quote=False))
 assert '@@' not in body
-open(SITE, 'w', encoding='utf-8', newline='\n').write(head + body)
+open(SITE, 'w', encoding='utf-8', newline='\n').write(built_on.insert(head + body, 'methodology'))
 s = open('site/sitemap.xml', encoding='utf-8').read()
 if 'research-methodology' not in s:
     a = '  <url><loc>https://hermesai.dev/research-giant-arc.html</loc></url>\n'

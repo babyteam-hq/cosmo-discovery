@@ -4,6 +4,9 @@ The head and styles are the last paper's (site/research-erass1-act-lensing.html)
 SVG drawn here from the landed numbers. Run from the repo root: python research/cosmo-discovery/briefs/mkpaper_sc.py
 """
 import re
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import built_on  # the opening "Built on" section (built_on.json)
 
 SITE = 'site/research-erass1-superclusters.html'
 T = ("ACT DR6 CMB lensing over 365 eRASS1 superclusters, against the &Lambda;CDM expectation from the Websky light-cone: no "
@@ -85,7 +88,7 @@ head = head.replace('research-erass1-act-lensing.html', 'research-erass1-supercl
 head = head.replace('.legend span::before{', '.legend .band::before{width:22px;height:7px;border-radius:4px;opacity:.55}\n.legend span::before{')
 body = open('research/cosmo-discovery/briefs/paper_sc_body.html', encoding='utf-8').read()
 body = body.replace('@@TITLE@@', T).replace('@@FIGURE@@', figure()).replace('@@TABLE@@', table())
-open(SITE, 'w', encoding='utf-8', newline='\n').write(head + body)
+open(SITE, 'w', encoding='utf-8', newline='\n').write(built_on.insert(head + body, 'erass1-superclusters'))
 s = open('site/sitemap.xml', encoding='utf-8').read()
 if 'research-erass1-superclusters' not in s:
     a = '  <url><loc>https://hermesai.dev/research-erass1-act-lensing.html</loc></url>\n'

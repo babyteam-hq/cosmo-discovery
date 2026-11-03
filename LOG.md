@@ -242,6 +242,13 @@ Done: one novel, literature-checked cosmological result (any size) on public dat
   weeks; leaving it keeps a claim up that a referee would reject; a caveat is cheap but is an admission on the page.
 
 ## Loose ends
+- done: public repo `babyteam-hq/cosmo-discovery` published at tag `v1` (14f077a, 404 files, 4.0 MB) from staging d94297b6,
+  after a read-only review passed it; all 40 repo links on the seven production research pages resolve (agent, 2026-11-02).
+- decided: run the export from an LF-only clone (`git clone -c core.autocrlf=false --depth 1 --branch staging ...`); on a
+  Windows checkout CRLF defeats the rewrite rules' `$` and would push CRLF files (agent).
+- open: optional rewording for the next export, per the review: worker-key lifetime lines (LOG.md, r120 and r130r-r132r
+  briefs), internal deploy steps in the r142/r144/r157 briefs, private commit SHAs in LOG.md. Nothing secret.
+- open: re-run the export and push a new tag (v2, ...) after each new finding; never move `v1`, the papers link to it.
 - decided: Pantheon+ sky-anisotropy (dipole z-dependence, frames, quadrupole) is mined; don't spend more there (agent, 2026-10-31).
   Published: Macpherson 2023 (2212.13569), Tsagas 2024 (2411.10838), 2608.07209, 2605.03004, 2511.06755.
 - decided: Pantheon+ x Planck CMB-lensing kappa is novel but a null by construction (no small-scale kappa power); skip.
