@@ -6,7 +6,7 @@
   <p class="date">2 November 2026 &middot; methods note</p>
   <div class="abstract">
     <h2>Summary</h2>
-    <p>Since 31 October 2026, Claude agents have run a research programme in observational cosmology on public data: they choose the questions, check the literature, write and run the analyses and write up the results, with a founder steering by chat. An agent asking itself whether its own idea is new is not evidence, so every question and every result goes to a blind referee: a fresh model with no context, given only the text, doing its own literature search and answering in a fixed verdict line. It is asked three times per test, before any download, before any compute and after the write-up, and only one verdict line is a pass. Four papers have passed; most tests have not, and every miss is kept, with its verdict verbatim, in the public repository: <a href="@@REPO@@">github.com/babyteam-hq/cosmo-discovery</a>.</p>
+    <p>Since 31 October 2026, Claude agents have run a research programme in observational cosmology on public data: they choose the questions, check the literature, write and run the analyses and write up the results, with a founder steering by chat. An agent asking itself whether its own idea is new is not evidence, so every question and every result goes to a blind referee: a fresh model with no context, given only the text, doing its own literature search and answering in a fixed verdict line. It is asked three times per test, before any download, before any compute and after the write-up, and only one verdict line is a pass. Three papers stand as passed and three were withdrawn, the third after a re-check found its null uncalibrated and its one revision could not calibrate it; most tests have not passed, and every miss is kept, with its verdict verbatim, in the public repository: <a href="@@REPO@@">github.com/babyteam-hq/cosmo-discovery</a>.</p>
   </div>
 </header>
 
@@ -42,15 +42,15 @@
 <table>
 <thead><tr><th scope="col">Outcome</th><th scope="col">Count</th><th scope="col">Which</th></tr></thead>
 <tbody>
-<tr><th scope="row">Passed the finding check, published</th><td>4</td><td style="text-align:left"><a href="research-cf4-supernovae.html">Cosmicflows-4 and supernovae</a> (third pass), <a href="research-erass1-act-lensing.html">eRASS1 clusters on ACT DR6 lensing</a> (second pass), <a href="research-erass1-superclusters.html">eRASS1 superclusters</a> (after the &Lambda;CDM null was added), <a href="research-giant-arc.html">the Giant Arc</a> (first pass)</td></tr>
-<tr><th scope="row">Published, then withdrawn after a miss</th><td>2</td><td style="text-align:left"><a href="research-erass1-anisotropy.html">eRASS1 anisotropy</a>, <a href="research-ngc1052-trail.html">NGC 1052 trail</a></td></tr>
-<tr><th scope="row">Parked after a miss, with what stands recorded</th><td>18</td><td style="text-align:left">R-123 to R-129, R-134, R-136, R-139, R-141, R-143, R-146, R-149, R-152, R-154, R-156, R-161</td></tr>
+<tr><th scope="row">Passed the finding check, published</th><td>3</td><td style="text-align:left"><a href="research-erass1-act-lensing.html">eRASS1 clusters on ACT DR6 lensing</a> (passed again on re-check, 3 November, with a weaker headline: a 5&sigma; detection whose mass rescaling does not yet test the eROSITA calibration), <a href="research-erass1-superclusters.html">eRASS1 superclusters</a> (after the &Lambda;CDM null was added), <a href="research-giant-arc.html">the Giant Arc</a> (first pass)</td></tr>
+<tr><th scope="row">Published, then withdrawn after a miss</th><td>3</td><td style="text-align:left"><a href="research-erass1-anisotropy.html">eRASS1 anisotropy</a>, <a href="research-ngc1052-trail.html">NGC 1052 trail</a>, <a href="research-cf4-supernovae.html">Cosmicflows-4 and supernovae</a> (passed on its third pass; on re-check, 3 November, its null is not calibrated; its one revision, the same day, built the calibrated null, but the best-validated field, 2M++, failed it too, and the revision missed the finding check: withdrawn)</td></tr>
+<tr><th scope="row">Parked after a miss, with what stands recorded</th><td>18</td><td style="text-align:left">R-123 to R-129 (seven), R-134, R-136, R-139, R-141, R-143, R-146, R-149, R-152, R-154, R-156, R-161</td></tr>
 <tr><th scope="row">Stopped at the feasibility gate</th><td>6</td><td style="text-align:left">R-145, R-148, R-151, R-153, R-159, R-160</td></tr>
-<tr><th scope="row">Finding-check verdicts on file</th><td>45</td><td style="text-align:left">4 pass, 40 &ldquo;novel but not sound&rdquo;, 1 &ldquo;sound but not novel&rdquo;</td></tr>
+<tr><th scope="row">Finding-check verdicts on file</th><td>48</td><td style="text-align:left">5 pass, 42 &ldquo;novel but not sound&rdquo;, 1 &ldquo;sound but not novel&rdquo;</td></tr>
 </tbody>
 </table>
 </div>
-<p class="tabcap"><b>The programme's record to 2 November 2026.</b> R-numbers are the work requests in the log; each one's verdicts are in its results file and in <a href="@@REPO@@/finding.md">finding.md</a>. The verdict count includes every pass of every finding, revisions included.</p>
+<p class="tabcap"><b>The programme's record to 3 November 2026.</b> R-numbers are the work requests in the log; each one's verdicts are in its results file and in <a href="@@REPO@@/finding.md">finding.md</a>. The verdict count includes every pass of every finding, revisions included, and the final re-checks of the CF4 and ACT pages' revised titles and abstracts (3 November); the earlier, superseded re-checks of those pages are in the outreach drafts.</p>
 <p>The misses are kept on purpose. A programme that shows only its passes cannot be checked, and most of what is new here is in the misses: a by-product measurement, a calibration no one had made, a reason a test cannot yet be done.</p>
 
 <h2><span class="n">5</span>Code and data</h2>
@@ -63,7 +63,7 @@
   <li>Every finding and its verdicts: <a href="@@REPO@@/finding.md">finding.md</a>; a row per test: <a href="@@REPO@@/results.md">results.md</a> and the <code>results-*.md</code> files.</li>
   <li>The work log: <a href="@@REPO@@/LOG.md">LOG.md</a>.</li>
 </ol>
-<footer>HermesAI Research &middot; <a href="/">hermesai.dev</a> &middot; the papers: <a href="research-cf4-supernovae.html">Cosmicflows-4 and supernovae</a>, <a href="research-erass1-act-lensing.html">eRASS1 on ACT DR6 lensing</a>, <a href="research-erass1-superclusters.html">eRASS1 superclusters</a>, <a href="research-giant-arc.html">the Giant Arc</a> &middot; questions to <a href="mailto:team@hermesai.dev">team@hermesai.dev</a></footer>
+<footer>HermesAI Research &middot; <a href="/">hermesai.dev</a> &middot; the papers: <a href="research-erass1-act-lensing.html">eRASS1 on ACT DR6 lensing</a>, <a href="research-erass1-superclusters.html">eRASS1 superclusters</a>, <a href="research-giant-arc.html">the Giant Arc</a> &middot; questions to <a href="mailto:team@hermesai.dev">team@hermesai.dev</a></footer>
 </main>
 </body>
 </html>

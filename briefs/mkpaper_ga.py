@@ -10,12 +10,12 @@ import built_on  # the opening "Built on" section (built_on.json)
 
 SITE = 'site/research-giant-arc.html'
 LAST = 'site/research-erass1-superclusters.html'
-T = ("The Giant Arc does not reappear on independent sightlines: on 3,822 DESI DR1 quasar sightlines that SDSS never observed, "
+T = ("The Giant Arc is not seen at its published strength on independent sightlines: on 3,822 DESI DR1 quasar sightlines that SDSS never observed, "
      "its fitted Mg II overdensity is A = &#8722;0.23 (95 per cent: &#8722;0.90 to +0.63), excluding the published "
-     "&delta;&rho;/&rho; = 1.3 at 3.2&sigma;")
-TPLAIN = ("The Giant Arc does not reappear on independent sightlines: on 3,822 DESI DR1 quasar sightlines that SDSS never "
+     "&delta;&rho;/&rho; = 1.3 at 3.2&sigma; but not a weaker structure")
+TPLAIN = ("The Giant Arc is not seen at its published strength on independent sightlines: on 3,822 DESI DR1 quasar sightlines that SDSS never "
           "observed, its fitted Mg II overdensity is A = −0.23 (95 per cent: −0.90 to +0.63), excluding the published "
-          "δρ/ρ = 1.3 at 3.2σ")
+          "δρ/ρ = 1.3 at 3.2σ but not a weaker structure")
 DESC = ("Counting DESI DR1 Mg II absorbers on 3,822 quasar sightlines through the Giant Arc's frozen hull that are in neither "
         "SDSS DR16Q nor the Zhu & Ménard searched lists: 8 observed against 8.86 expected. The fitted overdensity is "
         "A = −0.23 (68 per cent −0.71 to +0.26), excluding the published δρ/ρ = 1.3 at 3.2σ; a weaker real structure "

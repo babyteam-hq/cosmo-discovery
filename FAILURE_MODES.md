@@ -1,19 +1,19 @@
 # Failure modes of an AI research agent at a blind gate
 
-`gate-failures.csv` lists every gate verdict in this repository that was not a pass: 131 of them, from 31 October to
-2 November 2026. Claude agents chose, ran and wrote up tests on public cosmology data. A blind referee (a fresh model with
+`gate-failures.csv` lists every gate verdict in this repository that was not a pass: 132 of them, from 31 October to
+3 November 2026. Claude agents chose, ran and wrote up tests on public cosmology data. A blind referee (a fresh model with
 no context, given only the text, doing its own literature search, `blind-review.md`) checked them at up to four stages:
 
 | stage | when | pass line | rows |
 |---|---|---|---|
 | trajectory | before any download: is the question already answered? | "VERDICT: novel: no prior work answers this question" | 74 |
 | method | after the plan is fixed, before compute: will the plan carry the claim? | "METHOD: sound as planned" | 4 |
-| finding | after the write-up: novel and sound? | "VERDICT: the findings are confirmed novel and sound if the calculations hold" | 43 |
+| finding | after the write-up: novel and sound? | "VERDICT: the findings are confirmed novel and sound if the calculations hold" | 44 |
 | feasibility | the test's own step-0 forecast: can the data reach the line at all? | the forecast clears the brief's threshold | 10 |
 
 The method check started on 2026-11-01, after five finding-stage misses in a row on physics points knowable before compute,
 so it has few rows. Feasibility stops are the agent's own forecast, not the referee's; they are in because they stopped a
-test, and the referee was never asked. So 121 rows are the blind referee's and 10 are the agent's own. The referee is a fresh
+test, and the referee was never asked. So 122 rows are the blind referee's and 10 are the agent's own. The referee is a fresh
 model of the same family as the agent, so their blind spots may overlap, and errors both miss are not in the file.
 
 ## The denominator: passes
@@ -24,9 +24,9 @@ model of the same family as the agent, so their blind spots may overlap, and err
 |---|---|---|---|
 | trajectory | 9 | 74 | 89 % |
 | method | 0 | 4 | 100 % |
-| finding | 4 | 43 | 91 % |
+| finding | 4 | 44 | 92 % |
 | feasibility | 7 | 10 | 59 % |
-| all | 20 | 131 | 87 % |
+| all | 20 | 132 | 87 % |
 
 Read the last column with care: it counts verdicts, not tests. A test can miss several times and then pass (the four
 finding-stage passes are the four working papers, each passed after earlier misses), and a "partly novel" trajectory miss
@@ -34,14 +34,14 @@ usually narrowed a test that then ran. Feasibility passes count only the step-0 
 two forecasts that cleared their line without a recorded pass line (`plan-R154.md`, the ELG section of `finding.md`) are
 not counted. The four method checks all asked for a fix; none passed as planned.
 
-The record table on the methodology page (https://hermesai.dev/research-methodology.html) counts by Request and note: 45
-finding-check verdicts (4 passes) and 6 tests stopped at a step-0 gate. These files count every verdict line in the
+The record table on the methodology page (https://hermesai.dev/research-methodology.html) counts by Request and note: 48
+finding-check verdicts (5 passes, the fifth a re-check of a page's reworded title and abstract) and 6 tests stopped at a step-0 gate. These files count every verdict line in the
 record, so their numbers are larger: they add the forecast kills inside the earlier sweeps (GF-034 to GF-036 and GF-103)
 and the first review of the NGC 1052 note (GF-032), among others.
 
 ## Columns
 
-- `id`: GF-001 to GF-131, by date, then stage.
+- `id`: GF-001 to GF-132, by date, then stage.
 - `date`: the verdict's date as the file states it (blank where the file gives none).
 - `stage`: trajectory, method, finding or feasibility.
 - `test`: the Request (R-N) and the row or note, as the source names it.
@@ -49,9 +49,9 @@ and the first review of the NGC 1052 note (GF-032), among others.
   prior-work cell, joined by " | ".
 - `mode`: one label from the ten below, the referee's main reason.
 - `after`: what the files say changed next (killed, narrowed, re-run, parked, withdrawn), in a few words.
-- `source`, `line`: the file in this repository and the line holding the verdict, as of tag `v1.1`. `LOG.md` is the work log.
-- `trace`: the same place as a link, the file at tag `v1.1` with the line highlighted
-  (`https://github.com/babyteam-hq/cosmo-discovery/blob/v1.1/<source>?plain=1#L<line>`). Later versions of a file may move
+- `source`, `line`: the file in this repository and the line holding the verdict, as of tag `v1.2`. `LOG.md` is the work log.
+- `trace`: the same place as a link, the file at tag `v1.2` with the line highlighted
+  (`https://github.com/babyteam-hq/cosmo-discovery/blob/v1.2/<source>?plain=1#L<line>`). Later versions of a file may move
   the line; the tag keeps it where the row says.
 
 Each row was extracted from the committed files and checked against them by script: the quoted verdict is at the cited
@@ -85,7 +85,7 @@ withdrawal notice the same day.
 
 ### unseparated-systematic: 18 (0 / 1 / 17 / 0)
 The signal could be produced by a known systematic or selection effect the analysis did not separate or model. The most
-common finding-stage miss. **Example, GF-026** ([finding.md:418](finding.md?plain=1#L418)): the eRASS1 cluster
+common finding-stage miss. **Example, GF-026** ([finding.md:539](finding.md?plain=1#L539)): the eRASS1 cluster
 anisotropy tracked the survey's exposure, but in a half-sky the exposure is nearly collinear with the anisotropy axis, so
 the fit cannot tell them apart. Three passes later the claim had narrowed to "neither confirms nor excludes", and the
 published note was withdrawn.
@@ -95,7 +95,7 @@ The step-0 forecast says the data cannot reach the threshold, so the test stops 
 ([results-R148.md:69](results-R148.md?plain=1#L69)): Lyman-alpha forest x Compton-y. The per-quasar continuum fit removes
 the very mode the y map sees; the forecast was about 1e-4 sigma per bin, so nothing was measured.
 
-### unvaried-mock: 6 (0 / 1 / 5 / 0)
+### unvaried-mock: 7 (0 / 1 / 6 / 0)
 A mock, simulation or null choice the result depends on was never varied or calibrated. **Example, GF-116**
 ([results-R138.md:696](results-R138.md?plain=1#L696)): the SPHEREx x DESI amplitudes "depend on the unvaried compact/smooth
 split and smooth-light profile of the injected" mock; the detection stood, the corrected amplitudes did not.
@@ -129,7 +129,9 @@ known list by construction.
 
 ## What changed after
 
-Of the 43 finding-stage misses, 26 rows end in the note being parked, most after one revision; the rest record a
+Of the 44 finding-stage misses, 27 rows end in the note being parked, most after one revision; the rest record a
 revision (a null run, a claim narrowed or reworded) before the next pass. Two notes went on to pass after revision: the
-Cosmicflows-4 supernova note (GF-021, GF-030) and the eRASS1 x ACT lensing note (GF-088). Two published notes were
-withdrawn: NGC 1052 (GF-032) and the eRASS1 anisotropy note (GF-026, GF-029, GF-031). The `after` column has each one.
+Cosmicflows-4 supernova note (GF-021, GF-030) and the eRASS1 x ACT lensing note (GF-088). Three published notes were
+withdrawn: NGC 1052 (GF-032), the eRASS1 anisotropy note (GF-026, GF-029, GF-031) and the Cosmicflows-4 supernova note,
+whose one revision built the calibrated null the re-check asked for and found the 2M++ reference field failing it too
+(GF-132). The `after` column has each one.

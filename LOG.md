@@ -4,10 +4,11 @@
 
 **Goal (unchanged):** a novel, sound cosmological result on public data, written as its interval, through the blind gate.
 
-**Live on hermesai.dev (production 90d15e04), both passed the gate:**
-- https://hermesai.dev/research-cf4-supernovae.html (Type Ia SNe vs the Cosmicflows-4 velocity fields).
-- https://hermesai.dev/research-erass1-act-lensing.html (R-122: ACT DR6 CMB lensing on 2,444 eRASS1 clusters, b_M = 0.65-0.70
-  ± 0.19 ± 0.12; passed on pass 2). Withdrawn notices: research-erass1-anisotropy.html, research-ngc1052-trail.html.
+**Live on hermesai.dev (production 91a71d4, 2026-11-03), the three that passed the gate:**
+- https://hermesai.dev/research-erass1-act-lensing.html (R-122: ACT DR6 CMB lensing on 2,444 eRASS1 clusters; re-checked
+  2026-11-03 with a weaker headline, b_M = 0.65 to 0.70 ± 0.22 for the SZ-faint clusters, not yet a test of the calibration).
+- https://hermesai.dev/research-erass1-superclusters.html and https://hermesai.dev/research-giant-arc.html (R-157).
+- Withdrawn notices: research-erass1-anisotropy.html, research-ngc1052-trail.html, research-cf4-supernovae.html (R-169).
 
 **R-161 parked (spin asymmetry, last pass):** the exclusions target extrapolated or z-mismatched amplitudes (JADES's own matched-z +9.3 +- 10.7 % agrees with Euclid) and the VIS misclassification rate is unmeasured on real spirals; credited: an upper limit of ~1-2 % at 0.3<z<1.2 if eps < ~0.37. **Nothing is running.** Two briefs wait for data: Euclid DR1-Foundation (November 2026, date unannounced; briefs/r159_brief.md) and Gaia DR4 (2 December 2026; briefs/tidal_tails_brief.md). Watch is daily until then.
 
@@ -53,19 +54,18 @@ misses since (R-123 to R-129), each parked with what stands recorded in its `###
 (arXiv:2507.08798), JWST "too massive" ledger (arXiv:2606.30802), model-zoo re-scoring (arXiv:2607.13282/3), PTA lowest bin,
 second-universe search, joint SN common-mode offset. Nothing else is checked and waiting.
 
-**Cost so far:** 18 workers (R-115 to R-132). Ideation run (170 ideas, my votes): `.claude/workflows/.novel-ideas/novel-cosmological-
+**Cost so far (as of 2026-11-01):** 18 workers (R-115 to R-132). Ideation run (170 ideas, my votes): `.claude/workflows/.novel-ideas/novel-cosmological-
 discoveries-big-or-small-that-a/` (gitignored, main checkout's worktree path).
 
 ## Handoff (2026-10-31, end of the first session; superseded by the one above)
 
 **Live on hermesai.dev (production, 2026-11-01):**
-- `research-erass1-act-lensing.html`: PASSED the blind gate on pass 2 (R-122, cosmo-deep-2). Claim: ACT DR6 CMB lensing on
-  2,444 eRASS1 clusters outside the SZ-inpainting holes detects them at 5σ and measures the eROSITA weak-lensing mass scale at
-  25-30 %: b_M = 0.65-0.70 ± 0.19 ± 0.12, excluding neither the eRASS1 scale nor a halving. The second gate pass of the project.
-- `research-cf4-supernovae.html`: PASSED the blind gate on pass 3 ("confirmed novel and sound if the calculations hold"),
-  four required revisions applied. Claim: Type Ia SNe (Pantheon+, DES, ZTF) do not see the non-dipole structure of the
-  Cosmicflows-4 fields (joint fit 0.19 ± 0.07 vs a 0.88 mock return; 2M++ 0.39); bulk flow partly supported, CF4++'s points
-  30-65 deg north of the SNe's.
+- `research-erass1-act-lensing.html`: PASSED the blind gate on pass 2 (R-122, cosmo-deep-2); re-checked 2026-11-03 (R-165)
+  and PASSED again with a weaker headline: a 5σ detection of 2,444 eRASS1 clusters outside the SZ-inpainting holes whose mass
+  rescaling, b_M = 0.65-0.70 ± 0.22 (SZ-faint clusters), carries an unmodelled SZ-selection bias: not yet a test of the eROSITA scale.
+- `research-cf4-supernovae.html`: WITHDRAWN (R-169, 2026-11-03), now a notice like the other two. Passed on pass 3; the
+  re-checks found the null uncalibrated (R-165, R-167); its one revision (R-168) built the calibrated null, 2M++ failed it
+  (+4.7σ on ZTF z<0.06), and the finding check said "novel but not sound", so it was parked and withdrawn.
 - `research-erass1-anisotropy.html`: WITHDRAWN (three passes "novel but not sound"; the claim narrowed to "neither confirms
   nor excludes", which is not a result). Page is a withdrawal notice; sitemap entry removed. Decided by the gate rule, not a
   founder call (agent, 2026-10-31).
@@ -215,12 +215,16 @@ Prune when done: the worktree pruner.
 Done: one novel, literature-checked cosmological result (any size) on public data, reproducible from `research/cosmo-discovery/`.
 
 ## Live
-- production: `site/research-cf4-supernovae.html` (promoted 2026-10-31, 03f63a8e): Pantheon+, DES-SN5YR and ZTF DR2 SNe reject
+As of 2026-11-03 (production 91a71d4): the three gate passes `site/research-erass1-act-lensing.html`,
+`site/research-erass1-superclusters.html`, `site/research-giant-arc.html`; three withdrawal notices,
+`site/research-erass1-anisotropy.html`, `site/research-ngc1052-trail.html`, `site/research-cf4-supernovae.html`. The
+entries below are the first session's, kept as history.
+- withdrawn (R-169, 2026-11-03; first promoted 2026-10-31, 03f63a8e): `site/research-cf4-supernovae.html`: Pantheon+, DES-SN5YR and ZTF DR2 SNe reject
   the non-dipole structure of the Cosmicflows-4 velocity fields (beta 0.10-0.26 vs 1); the three samples agree on the bulk
   flow (l 295-311, b 0-21) and the CF4++ field's dipole points 30-65 deg north of it. Working notes: `research/cosmo-discovery/`.
 - withdrawn: `site/research-erass1-anisotropy.html` (2026-10-31, three "not sound" passes). `erass1_lxt.py` and the verdicts stay
   in `research/cosmo-discovery/` for a northern-hemisphere or selection-function follow-up.
-- production: `site/research-ngc1052-trail.html` (promoted 2026-10-31, ef7ea1c6): the NGC 1052 trail's velocity gradient is
+- withdrawn (first promoted 2026-10-31, ef7ea1c6): `site/research-ngc1052-trail.html`: the NGC 1052 trail's velocity gradient is
   8 sigma with the papers' 7 objects and 2.6 sigma with all 9 (selection null p = 0.011); the alignment in Roman+2021's independent catalogue is 2.5 sigma for the chosen line and p = 0.12 over all lines; DF4 is kinematically an
   ordinary group member. R-116's `trail_ngc1052.py`.
 - staging: R-115's sweep (`sweep.md`, 31 tests), `results.md`, and the dust candidate in `finding.md`, settled by R-116 as
@@ -229,12 +233,13 @@ Done: one novel, literature-checked cosmological result (any size) on public dat
   1.7±0.3 times the swap) and no public emission-free map can tell which map is right. Not a claim; a documented systematic.
 
 ## Next
-1. R-116 (cloud worker, running): dust candidate settled (partial, see `### cosmo-sweep-2`); second sweep in new territory
+1. done: R-116 (cloud worker) settled the dust candidate (partial, see `### cosmo-sweep-2`); second sweep in new territory
 2. the dust result is a partial: no site paper unless a founder wants the systematic written up as such (`finding.md`)
 3. prune this worktree when done: the worktree pruner
 
 ## Waiting on the founders
-- The CF4 article is live on production (`site/research-cf4-supernovae.html`) and the blind review (Opus, context-free,
+- Nothing from this goal. (Done: the CF4 call below, closed by R-168's revision and R-169's withdrawal, 2026-11-03.)
+- closed: the CF4 article was live on production (`site/research-cf4-supernovae.html`) and the blind review (Opus, context-free,
   `research/cosmo-discovery/blind-review.md`) returned "novel but not sound": regression attenuation (noisy predictor,
   redshift-space positions) explains "dipole β ≈ 1, non-dipole β ≪ 1" as well as over-prediction does, and Stiskalek+2025
   (arXiv:2502.00121) is uncited closest prior work. Founder's call: pull the article, add a caveat, or leave it until the
@@ -1600,3 +1605,86 @@ section with its verdict.
   referee asked for (VIS eps on the cross-matched JADES galaxies) needs a full retrain; a worker that may be revised
   should push its small outputs (net.pt, stats_rows.csv, a few MB) somewhere durable.
 
+### cosmo-cf4-rev (R-168, cw-175, 2026-11-03)
+
+Goal: make the published CF4 paper (`site/research-cf4-supernovae.html`) pass the finding check on a calibrated null, or park
+it; one revision. **Outcome: parked.** Rows in `research/cosmo-discovery/results-cf4-rev.md`, the plan in `plan-cf4-rev.md`,
+the revision as a section under the first finding in `finding.md` (also alone in `finding-cf4-rev.md`), scripts
+`cf4rev_common.py`, `cf4rev_chain.py`, `cf4rev_fit.py`, `cf4rev_realwf.py`, `cf4rev_table.py`.
+
+- Step 0: route 1 closed (no public CF4 posterior realisations: the IP2I page has mean and std grids only). Route 2 built here:
+  a CF4-like chain (ΛCDM truth on 256³, the 55,694 real CF4 galaxies with their own errors, Wiener-filter posterior mean on the
+  CF4++ grid, Pantheon+ hosts sharing the SNe's mock noise) and a 2M++-like chain (log-normal galaxies, 2MASS n(r), redshift
+  space, ZoA cloning, iterative reconstruction, fitted scale and V_ext). 5-35 s per realisation. Forecast: Pantheon+ CF4-like
+  β_rest null 1.35 ± 0.17 against CF4++'s 0.19 (> 2σ): go.
+- Step 1: method check three times, "fixable" each time, every point closed before the data fit (variants for prior, smoothing,
+  grouping, error model, zero-point step, v_nl, σ8, clustered positions, a 2LPT truth, the Watkins-Feldman estimator; ZTF
+  selection, field zero points, host-mass step; group-shared velocities in mocks and covariances; the chain's filter run on the
+  real CF4 catalogue; decision rules R1-R3). The ZTF power forecast moved the headline from ZTF z < 0.1 (null too broad) to
+  ZTF z < 0.06, before any data fit. Pass 3's closure was not re-checked.
+- Result (300 baseline realisations): **R1, the 2M++ check, fails on both samples**, on the bulk-flow part: 2M++'s β_dipole
+  3.95 ± 0.85 vs a 2M++-like null of 0.47 ± 0.74 on ZTF z < 0.06 (+4.7σ), 2.49 ± 0.35 vs 0.67 ± 0.67 on Pantheon+ (+2.7σ,
+  p 0.007); its non-dipole part is −1.9σ on both (rank p 0.03 and 0.007). The failure survives bias 1.0, 1.4 and a 2LPT truth.
+  By the plan's rule the analysis stops: the estimator is not trusted. Recorded, not interpreted: CF4++ β_rest 0.19 ± 0.08
+  vs null 0.98 ± 0.21 (ZTF z < 0.06), 0.23 ± 0.06 vs 1.38 ± 0.14 (Pantheon+), and the chain's own filter of the real CF4 data
+  also falls 3.6-4.8 null-sd short, so the shortfall is common to every reconstruction. Paired CF4++ − 2M++ non-dipole
+  difference −0.13 ± 0.23 and −0.20 ± 0.14: none. The CF4++ bulk-flow direction offset (38-68°) is within its null (rank 0.75).
+- Field-level, no estimator needed: CF4++ carries 2-4× the radial-velocity amplitude a linear Wiener filter extracts from the
+  same catalogue, anti-correlated with it beyond 150 Mpc/h; the catalogue's scatter about the filter is χ²/datum 0.87 against
+  the mocks' 1.00 (its errors are not underestimated).
+- Finding check (verbatim in the results file and finding.md): "VERDICT: novel but not sound: the gate that "fails" uses a
+  2M++-like null that does not copy how the real Carrick field and its external dipole were built, and it cannot separate an
+  estimator fault from a real bulk flow larger than ΛCDM allows, so the stated diagnosis does not follow."
+- Parked: the page keeps its "Under revision" line, unchanged. `outreach/authors-cf4-supernovae.md` stays held. The
+  methodology page's record updated (`briefs/paper_method_body.html`, regenerated with `mkpaper_method.py`; 48 verdicts).
+  `briefs/mkpaper.py` not run (no pass, so the CF4 head is unchanged).
+- closed by R-169 (withdrawn as a notice, by Will's rules), was: withdraw the CF4 page (the default the brief names) or keep it under revision. Withdrawing gives up
+  the field-level CF4++-vs-linear-filter comparison and the record of the calibration (both stay in the repo either way);
+  keeping it leaves a page whose numbers support no conclusion, with a status line saying so. Recommendation: withdraw.
+- Loose ends, decided here: the Pantheon+ VPEC systematic is removed by differencing grouping files (the files are not
+  STATONLY + one systematic; documented in `cf4rev_common.pantheon`). The CF4-only chain variants were built but not run once
+  R1 failed (the rule stops before they matter). What a next attempt would need, from the referee: a 2M++-like null that copies
+  Carrick's luminosity weighting and SFI++/A1 fit of β* and V_ext, a free SN dipole in the fit (to stop dipole leakage into
+  β_rest), and SN mocks with the sky-correlated scatter the ZTF field jackknife shows (errors about twice GLS). Not started:
+  the brief allows one revision.
+
+### cosmo-cf4-withdraw (R-169, 2026-11-03)
+Goal: the CF4 supernova page becomes a withdrawal notice after R-168 parked it. **Done.**
+- `site/research-cf4-supernovae.html` is a notice in the shape of the erass1-anisotropy and ngc1052-trail ones (same URL,
+  noindex, its own og/description, Organization JSON-LD, kept in the sitemap like them): the claim, R-168's calibrated
+  numbers as 68 % intervals, the stop rule, the verdict's first clause verbatim, what stays true, the Built-on credits
+  (a withdrawn-note `lead` in `built_on.json`), links to the results, plan and finding files and the repo.
+- `briefs/mkpaper.py` took the ACT page's head from the CF4 page; it now takes it from the ACT page itself, and adds the
+  ACT sitemap entry before `</urlset>`. The two older notices' footers ("see CF4, which passed the same gate") and the ACT
+  page's "see also" now point at the Giant Arc and superclusters pages.
+- Methodology record: 3 passed, 3 withdrawn (`paper_method_body.html`, regenerated with `mkpaper_method.py`). Public README
+  (the export script): the CF4 row moved to the withdrawn list with the revision's files; the ACT row's
+  title brought to the page's reworded one. `export.test.sh` checks the revision's files are exported.
+- `gate-failures.csv` GF-132: R-168's stop (finding, unvaried-mock, finding.md:272); `FAILURE_MODES.md` counts follow (132).
+- fixed: R-168's section in `finding.md` had moved six gate rows off their cited lines (GF-023 to GF-027, GP-011; +121
+  lines), which `export.test.sh` caught; their `line` and `trace` now point at the current lines, as does FAILURE_MODES's
+  GF-026 example.
+- open: the notice links `results-cf4-rev.md`, `plan-cf4-rev.md` and `finding-cf4-rev.md` at the public repo's tag, like
+  the dataset's traces. v1.1 already existed without them (2026-11-03 00:14Z, before R-168), so R-170 moved every link to
+  v1.2: v1.2 must be tagged from a tree at or after 6e5d5e7 (R-170's landing).
+
+### cosmo-public-v1.2 (R-170, cw-177, 2026-11-03)
+- done: every link into the public repo's current export names `v1.2`: the CF4 notice (4 links), both gate CSVs' `trace`
+  (132 + 20), `FAILURE_MODES.md`'s trace definition, the five LinkedIn drafts and `agent-eval-note.md` (links and their
+  "confirm the tag" notes). The tag is one file, the export script; `export.test.sh` builds the trace URLs from it
+  and fails on any link at another tag on the site, in `FAILURE_MODES.md` or in the drafts. Left as history: data-release
+  versions (eRASS1 cosmology sample v1.1, the Zitrin v1.1 lens model, DESI tractorphot v1.1), the outreach log's "v1.1
+  published" lines, linkedin-02's recorded re-check notes.
+- fixed: five LOG.md gate rows (GF-037 to GF-041) were off their lines after R-169's edits to this file's head; re-pointed
+  after this request's edits.
+- Handoff, `## Live`, `## Next`, `## Waiting on the founders` brought to the record: three gate passes live, three
+  withdrawal notices (CF4 and the NGC 1052 trail among them), R-116 done, the CF4 call closed; the cost line marked as of
+  2026-11-01 (no later total is recorded); Will's "back to opus" ask marked done (the bot's TEAM_MODEL, R-64).
+- methodology record: "Parked after a miss" is 18 and lists 18 (R-123 to R-129 is seven; plus eleven), so only "(seven)"
+  is added to the range for the reader; regenerated with `mkpaper_method.py`.
+- Giant Arc: title, og:title and h1 reworded through `mkpaper_ga.py` from "does not reappear" (the record's referee caution:
+  it goes beyond an interval that allows A up to about 0.6) to "is not seen at its published strength ... excluding the
+  published δρ/ρ = 1.3 at 3.2σ but not a weaker structure"; the public README row and `authors-giant-arc.md` follow.
+- outreach (detail in the outreach work file): `agent-eval-note.md` re-checked with the dataset's counts: pass;
+  `authors-giant-arc.md` re-checked after the reword: "novel but not sound" (the known shrinkage objection, which the email
+  states). Nothing sent or posted.

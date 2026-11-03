@@ -1,5 +1,6 @@
 {
  "cf4-supernovae": {
+  "lead": "The withdrawn note tested other people's velocity fields against other people's supernovae, on data and methods built by human researchers:",
   "credits": [
    {
     "who": "the Pantheon+ team",
@@ -204,7 +205,7 @@
   "credits": [
    {
     "who": "Tully et al. and the Cosmicflows team; the Pantheon+, DES and ZTF supernova teams",
-    "what": "the galaxy distances, velocity fields and supernova samples behind the Cosmicflows-4 paper",
+    "what": "the galaxy distances, velocity fields and supernova samples behind the Cosmicflows-4 note (withdrawn)",
     "cite": "Tully R. B. et al. 2023, ApJ 944, 94; Scolnic D. et al. 2022, ApJ 938, 113",
     "arxiv": "2209.11238"
    },

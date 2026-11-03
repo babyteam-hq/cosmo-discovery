@@ -9,19 +9,27 @@ The methodology, in one page: <https://hermesai.dev/research-methodology.html>.
 
 ## The papers
 
-Working papers, not peer reviewed. Each passed the blind gate described below.
+Three working papers stand, not peer reviewed, each passed by the blind gate described below; three more were
+published and then withdrawn (after the table).
 
 | Paper | Date | Scripts | Numbers |
 |---|---|---|---|
-| [Type Ia supernovae do not see the non-dipole velocity structure of the Cosmicflows-4 reconstructions](https://hermesai.dev/research-cf4-supernovae.html) | 31 Oct 2026 | `cf4_vs_2mpp.py`, `cf4_decompose.py`, `cf4_variants.py`, `cf4_2023.py`, `cf4_robust.py`, `cf4_notin.py`, `cf4_des.py`, `ztf_tests.py`, `bulk_flow.py`, `cf4_mocks.py`, `cf4_referee2.py` (with `cf4_io.py`) | [`finding.md`](finding.md) (first section), [`results.md`](results.md) |
-| [ACT DR6 CMB lensing measures the eRASS1 cluster mass scale at 25 to 30 per cent](https://hermesai.dev/research-erass1-act-lensing.html) | 1 Nov 2026 | `erass1_act.py` (imports `erass1_cmblens.py`), `act_dr6_fetch.sh`, `act_dr6_simstream.sh` | [`results-R122.md`](results-R122.md) |
+| [ACT DR6 CMB lensing detects eRASS1 clusters at 5σ; their mass rescaling does not yet test the eROSITA weak-lensing calibration](https://hermesai.dev/research-erass1-act-lensing.html) | 1 Nov 2026 | `erass1_act.py` (imports `erass1_cmblens.py`), `act_dr6_fetch.sh`, `act_dr6_simstream.sh` | [`results-R122.md`](results-R122.md) |
 | [ACT DR6 CMB lensing over 365 eRASS1 superclusters, against the ΛCDM expectation from the Websky light-cone](https://hermesai.dev/research-erass1-superclusters.html) | 2 Nov 2026 | `sc_members.py`, `sc_lens.py`, `sc_null.py` (with `erass1_cmblens.py`, `erass1_act.py`, `act_dr6_fetch.sh`, `act_dr6_simstream.sh`) | [`results-R137.md`](results-R137.md), [`results-R140.md`](results-R140.md) |
-| [The Giant Arc does not reappear on independent sightlines](https://hermesai.dev/research-giant-arc.html) | 2 Nov 2026 | `r155_template.py`, `r155_sightlines.py`, `r155_core.py`, `r155_run.py`, `r155_measure.py`, `r155_common.py`; the plan the method check saw, [`r155_plan.md`](r155_plan.md) | [`results-R155.md`](results-R155.md) |
+| [The Giant Arc is not seen at its published strength on independent sightlines](https://hermesai.dev/research-giant-arc.html) | 2 Nov 2026 | `r155_template.py`, `r155_sightlines.py`, `r155_core.py`, `r155_run.py`, `r155_measure.py`, `r155_common.py`; the plan the method check saw, [`r155_plan.md`](r155_plan.md) | [`results-R155.md`](results-R155.md) |
 
 Withdrawn after publication, when the blind referee found them not sound or not novel:
-[the eRASS1 cluster anisotropy note](https://hermesai.dev/research-erass1-anisotropy.html) (`erass1_lxt.py`) and
+[the eRASS1 cluster anisotropy note](https://hermesai.dev/research-erass1-anisotropy.html) (`erass1_lxt.py`),
 [the NGC 1052 bullet-dwarf trail note](https://hermesai.dev/research-ngc1052-trail.html) (`trail_ngc1052.py`,
-`trail_roman.py`, `dm_content.py`). Their sections and verdicts are still in [`finding.md`](finding.md).
+`trail_roman.py`, `dm_content.py`) and
+[the Type Ia supernovae and Cosmicflows-4 note](https://hermesai.dev/research-cf4-supernovae.html), which passed on its
+third pass, was found on re-check to have an uncalibrated null, and was withdrawn when its one revision, which built the
+calibrated null, found the reference field 2M++ failing it too (first version: `cf4_vs_2mpp.py`, `cf4_decompose.py`,
+`cf4_variants.py`, `cf4_2023.py`, `cf4_robust.py`, `cf4_notin.py`, `cf4_des.py`, `ztf_tests.py`, `bulk_flow.py`,
+`cf4_mocks.py`, `cf4_referee2.py`, with `cf4_io.py`; [`results.md`](results.md); the revision: `cf4rev_common.py`,
+`cf4rev_chain.py`, `cf4rev_fit.py`, `cf4rev_realwf.py`, `cf4rev_table.py`, [`plan-cf4-rev.md`](plan-cf4-rev.md),
+[`results-cf4-rev.md`](results-cf4-rev.md), [`finding-cf4-rev.md`](finding-cf4-rev.md)). Their sections and verdicts
+are still in [`finding.md`](finding.md).
 
 ## How the work is done
 
